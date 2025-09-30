@@ -33,7 +33,6 @@ const Upload = () => {
         setStatusText("Converting to image...");
 
         const imageFile = await convertPdfToImage(file);
-        console.log("Error " + imageFile.file);
         
         if (!imageFile.file) return setStatusText("Error: Failed to convert to image");
 
@@ -74,6 +73,7 @@ const Upload = () => {
         setStatusText("Analyzing complete, redirecting");
 
         console.log(data);
+        navigate(`/resume/${uuid}`)
 
 
     }
